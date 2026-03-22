@@ -13,7 +13,7 @@ class TestFetchURLStatus(unittest.TestCase):
         mock_get.return_value = mock_response  # Mock the return value of requests.get
         
         result = get_status("https://example.com")
-        self.assertEqual(result, 200)  # Tests function logic
+        self.assertEqual(result, 200)  
 
     @patch('status_code.requests.get')  # Patch requests.get
     def test_get_status_not_found(self, mock_get):
@@ -23,7 +23,7 @@ class TestFetchURLStatus(unittest.TestCase):
         mock_get.return_value = mock_response  # Mock the return value of requests.get
         
         result = get_status("https://google.com")
-        self.assertEqual(result, 404)  # Tests function logic
+        self.assertEqual(result, 404)  
 
     @patch('status_code.requests.get')  # Patch the requests.get inside my module
     def test_get_status_forbidden(self, mock_get):
@@ -33,7 +33,7 @@ class TestFetchURLStatus(unittest.TestCase):
         mock_get.return_value = mock_response  # Mock the return value of requests.get
         
         result = get_status("https://example.com")
-        self.assertEqual(result, "Forbidden")  # Tests function logic
+        self.assertEqual(result, "Forbidden")  
 
     @patch('status_code.requests.get')  # Patch the requests.get inside my module
     def test_get_status_too_many_requests(self, mock_get):
@@ -43,7 +43,7 @@ class TestFetchURLStatus(unittest.TestCase):
         mock_get.return_value = mock_response  # Mock the return value of requests.get
         
         result = get_status("https://example.com")
-        self.assertEqual(result, "Too Many Requests")  # Tests function logic
+        self.assertEqual(result, "Too Many Requests")   
 
 
     @patch('status_code.requests.get')  # Patch requests.get
@@ -52,7 +52,7 @@ class TestFetchURLStatus(unittest.TestCase):
         mock_get.side_effect = requests.exceptions.ConnectionError  # Simulate connection error
         
         result = get_status("invalid-url")
-        self.assertEqual(result, "Connection Error")  # Test function logic
+        self.assertEqual(result, "Connection Error")  
 
     @patch('status_code.requests.get')  # Patch the requests.get
     def test_get_status_timeout(self, mock_get):
@@ -60,7 +60,7 @@ class TestFetchURLStatus(unittest.TestCase):
         mock_get.side_effect = requests.exceptions.Timeout  # Simulate timeout error
         
         result = get_status("https://example.com")
-        self.assertEqual(result, "Timeout Error")  # Test function logic
+        self.assertEqual(result, "Timeout Error")
 
     @patch('status_code.requests.get')  # Patch the requests.get
     def test_get_status_general_error(self, mock_get):
@@ -68,7 +68,7 @@ class TestFetchURLStatus(unittest.TestCase):
         mock_get.side_effect = requests.exceptions.RequestException  # Simulate a general request error
         
         result = get_status("https://example.com")
-        self.assertEqual(result, "General Error")  # Tests function logic
+        self.assertEqual(result, "General Error")  
 
 if __name__ == "__main__":
     unittest.main()
