@@ -1,13 +1,13 @@
-# Creating a Python script to get and print the status code of the response of a list of URLs from a .csv file.
+## Creating a Python script to get and print the status code of the response of a list of URLs from a .csv file.
 
 This repository contains my submission for the second task on the wikimedia project addressing the lusophone techonlogical wishlist proposals.
 
 ### | File | Description |
-| `status_code.py` | Main script — reads the CSV and prints each URL's status code 
-| `test_status_code.py`|  Unit tests covering expected behaviour and error handling.
-| `Task 2 - Intern.csv`| The CSV file containing the list of URLs.
-| `requirements.txt`| Contains the libraries I used.
-| `.gitignore`| Contains my virtual environment.
+- | `status_code.py` | Main script — reads the CSV and prints each URL's status code 
+- | `test_status_code.py`|  Unit tests covering expected behaviour and error handling.
+- | `Task 2 - Intern.csv`| The CSV file containing the list of URLs.
+- | `requirements.txt`| Contains the libraries I used.
+- | `.gitignore`| Contains my virtual environment.
 
 ---
 
